@@ -1,0 +1,53 @@
+div.nav {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    background: #131514;
+}
+
+div.nav h3 {
+    color: #eee;
+}
+
+div.nav ul {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    margin-top: 2rem;
+    margin-left: 45rem;
+}
+
+div.nav ul li {
+    text-decoration: none;
+    list-style: none;
+    margin-right: 2rem;
+}
+
+div.nav ul li a {
+    color: #eee;
+    text-decoration: none;
+}
+
+div.nav ul li ul {
+    display : none;
+    position:absolute;
+    right:39rem;
+    background:#131514;
+    float: left;
+}
+
+div.nav ul li ul li {
+    width:100%;
+    border-bottom:1px solid rgba(255,255,255,.3);
+}
+
+div.nav ul li:hover ul {
+    display:block;
+
+}
+
+
+li > a:after { content: ' »'; } /* Change this in order to change the Dropdown symbol */
+
+li > a:only-child:after { content: ''; }
