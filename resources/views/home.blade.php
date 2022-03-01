@@ -4,4 +4,3 @@
 
     @include('layouts.partials.menubar')
 
-    

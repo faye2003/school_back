@@ -1,3 +1,14 @@
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    background: #131514;
+}
+
 div.nav {
     display: flex;
     flex-wrap: wrap;
@@ -50,3 +61,13 @@ div.nav ul li:hover ul {
 li > a:after { content: ' »'; } /* Change this in order to change the Dropdown symbol */
 
 li > a:only-child:after { content: ''; }
+
+
+
+/* ============================================================================================================ */
+
+section.lateralmenu {
+    width: 300px;
+    height: 100vh;
+    background: #131514;
+}
