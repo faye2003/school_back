@@ -1,0 +1,28 @@
+{
+  "name": "public",
+  "authors": [
+    "faye2003 <fayem7409@gmail.com>"
+  ],
+  "description": "",
+  "main": "",
+  "license": "MIT",
+  "homepage": "",
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "angular-route": "^1.8.2",
+    "angular-cookies": "^1.8.2",
+    "bootstrap": "^5.1.3",
+    "angular-filter": "^0.5.17",
+    "angular-ui-router": "^1.0.30",
+    "angular-sanitize": "^1.8.2",
+    "angular-loadscript": "*",
+    "ng-load": "^1.0.2"
+  }
+}
