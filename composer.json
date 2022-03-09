@@ -46,6 +46,15 @@
         ],
         "post-create-project-cmd": [
             "@php artisan key:generate --ansi"
+        ],
+        "config-server-base": [
+            "sudo chmod -R 777 storage/",
+            "sudo chmod -R 777 bootstrap/cache",
+            "sudo chmod -R 777 storage/ bootstrap/cache",
+            "php artisan clear-compiled",
+            "composer dumpautoload",
+            "php artisan config:cache",
+            "sudo chmod -R 777 public/uploads/ storage/"
         ]
     },
     "extra": {

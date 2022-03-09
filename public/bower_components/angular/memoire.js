@@ -2,6 +2,7 @@ let myApp = angular.module('myApp', ['ngRoute', 'ngCookies']);
 
 myApp.config('$routeProvider', '$locationProvider', function ($routeProvider, $locationProvider) {
 
+    console.log('bonjour');
     $routeProvider.when('/', {
         templateUrl : 'page/login',
     });
