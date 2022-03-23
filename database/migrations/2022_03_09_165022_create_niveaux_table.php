@@ -15,6 +15,13 @@ class CreateNiveauxTable extends Migration
     {
         Schema::create('niveaux', function (Blueprint $table) {
             $table->id();
+            $table->string('designation');
+            $table->string('description')->nullable();
+
+
+            $table->integer('classe_id')->unsigned()->nullable();
+            $table->foreign('classe_id')->references('id')->on('classes');
+
             $table->timestamps();
         });
     }

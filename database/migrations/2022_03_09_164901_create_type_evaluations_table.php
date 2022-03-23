@@ -15,6 +15,12 @@ class CreateTypeEvaluationsTable extends Migration
     {
         Schema::create('type_evaluations', function (Blueprint $table) {
             $table->id();
+            $table->string('designation');
+            $table->string('description')->nullable();
+
+            $table->integer('evaluation_id')->unsigned()->nullable();
+            $table->foreign('evaluation_id')->references('id')->on('evaluations');
+
             $table->timestamps();
         });
     }

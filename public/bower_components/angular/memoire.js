@@ -1,22 +1,17 @@
-let myApp = angular.module('myApp', ['ngRoute', 'ngCookies']);
+let app = angular.module('myApp', ['ngRoute']);
 
-myApp.config('$routeProvider', '$locationProvider', function ($routeProvider, $locationProvider) {
-
-    console.log('bonjour');
-    $routeProvider.when('/', {
-        templateUrl : 'page/login',
-    });
+app.config(function ($routeProvider) {
 
     $routeProvider.when('/dashboard', {
         templateUrl : 'page/dashboard',
     });
 
-    $routeProvider.when ('/eleve', {
+    $routeProvider.when ('/eleves', {
         templateUrl : 'page/eleves',
     });
 
-    $routeProvider.when ('/profs' {
-        templateUrl : 'page/enseignants',
+    $routeProvider.when ('/profs', {
+        templateUrl : 'page/profs',
     });
 
     $routeProvider.when ('/notes', {
@@ -36,6 +31,6 @@ myApp.config('$routeProvider', '$locationProvider', function ($routeProvider, $l
     });
 });
 
-myApp.controller('myController', ['$scope', function ($scope) {
+app.controller('myController', ['$scope', function ($scope) {
     
-}])
+}]);

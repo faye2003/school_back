@@ -15,6 +15,13 @@ class CreateElevesCoursTable extends Migration
     {
         Schema::create('eleves_cours', function (Blueprint $table) {
             $table->id();
+
+            $table->integer('eleve_id')->unsigned()->nullable();
+            $table->foreign('eleve_id')->references('id')->on('eleves');
+
+            $table->integer('cour_id')->unsigned()->nullable();
+            $table->foreign('cour_id')->references('id')->on('cours');
+
             $table->timestamps();
         });
     }
