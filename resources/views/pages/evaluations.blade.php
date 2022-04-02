@@ -1,4 +1,4 @@
-<h1>Liste Eleves</h1>
+<h1>Liste Evaluations</h1>
 
 <div class="cards-view">
   <div class="card-single-view">
@@ -11,41 +11,15 @@
   </div>
 </div>
 
-<!-- <div class="cards-up">
-  <div class="filter">
-    <span class="fa fa-filter filter-icon">filter-icon</span>
-    <span class="fa fa-dropdown-up dropdown">dropdown</span>
-  </div>
-  <div class="add-plus">
-    <span class="fa fa-plus">fa-plus</span>
-  </div>
-</div> -->
-
 <table id="customers">
   <tr>
-    <th>Nom</th>
-    <th>Prenom</th>
-    <th>Telephone</th>
-    <th>Niveau</th>
-    <th>Age</th>
-    <th>Sexe</th>
-    <th>Classe</th>
-    <th>Moyenne</th>
+    <th>Designation</th>
+    <th>Description</th>
+    <th>Surveillant</th>
+    <th>Duree</th>
+    <th>Salle</th>
   </tr>
   <tr>
-    <td>Alfreds Futterkiste</td>
-    <td>Maria Anders</td>
-    <td>Germany</td>
-    <td>Alfreds Futterkiste</td>
-    <td>Maria Anders</td>
-    <td>Germany</td>
-    <td>Alfreds Futterkiste</td>
-    <td>Maria Anders</td>
-  </tr>
-  <tr>
-    <td>Alfreds Futterkiste</td>
-    <td>Maria Anders</td>
-    <td>Germany</td>
     <td>Alfreds Futterkiste</td>
     <td>Maria Anders</td>
     <td>Germany</td>
@@ -56,6 +30,10 @@
     <td>Alfreds Futterkiste</td>
     <td>Maria Anders</td>
     <td>Germany</td>
+    <td>Alfreds Futterkiste</td>
+    <td>Maria Anders</td>
+  </tr>
+  <tr>
     <td>Alfreds Futterkiste</td>
     <td>Maria Anders</td>
     <td>Germany</td>

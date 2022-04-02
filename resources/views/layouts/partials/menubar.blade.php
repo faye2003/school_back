@@ -1,19 +1,3 @@
-<!-- <div class="nav">
-    <h3>Appui Pedagogique</h3>
-    <ul>
-        <li><a href="#">Tableau de Bord</a></li>
-        <li><a href="#">Eleves</a></li>
-        <li><a href="#">Professeurs</a></li>
-        <li><a href="#">Notes</a></li>
-        <li><a href="#">niveaux</a>
-            <ul>
-                <li><a href="#">Moyen</a></li>
-                <li><a href="#">Secondaire</a></li>
-            </ul>
-        </li>
-    </ul>
-</div> -->
-
 <div class="content">
 
 <header>
@@ -26,14 +10,23 @@
 
 <div class="user-wrapper" id="dropdown">
 <div>
-<h4>Alassane</h4>
-<small>Admin</small>
+<h4>{{Auth::user()->name}}</h4>
+<small>Super-Admin</small>
 </div>
 
-<img src="images/pp.jpg" width="30" height="30" class="logo-admin">
+<span class="avatar avatar-online"><img src="{{ Auth::user()->image==null ? asset('css/app-assets/images/user-icon.png') : Auth::user()->image}}" width="30" height="30" class="logo-admin"><i></i></span>
 <div class="dropdown-content">
-<p>Mon profil</p>
-<p>Deconnexion</p>
+<p>
+    <a class="dropdown-item font" href="" target="_self" ng-click="showModalUpdate('user',{{Auth::user()->id}},false, true)">
+        <i class="ft-user"></i> Mon Profil
+    </a>
+</p>
+<p>
+    <a class="dropdown-item font" href="{{ route('logout') }}" onclick="event.preventDefault();document.getElementById('logout-form').submit();">Deconnexion</a>
+    <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
+        @csrf
+    </form>
+</p>
 </div>
 
 </div>

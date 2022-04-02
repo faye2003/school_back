@@ -2,7 +2,7 @@ let app = angular.module('myApp', ['ngRoute']);
 
 app.config(function ($routeProvider) {
 
-    $routeProvider.when('/dashboard', {
+    $routeProvider.when('/', {
         templateUrl : 'page/dashboard',
     });
 
@@ -13,13 +13,25 @@ app.config(function ($routeProvider) {
     $routeProvider.when ('/profs', {
         templateUrl : 'page/profs',
     });
+    
+    $routeProvider.when ('/disciplines', {
+        templateUrl : 'page/disciplines',
+    });
+
+    $routeProvider.when ('/emplois', {
+        templateUrl : 'page/emplois',
+    });
+
+    $routeProvider.when ('/niveau', {
+        templateUrl : 'page/niveaux',
+    });
 
     $routeProvider.when ('/notes', {
         templateUrl : 'page/notes',
     });
 
-    $routeProvider.when ('/niveau', {
-        templateUrl : 'page/niveau',
+    $routeProvider.when ('/evaluations', {
+        templateUrl : 'page/evaluations',
     });
 
     $routeProvider.when ('/sales', {

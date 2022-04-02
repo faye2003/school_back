@@ -1,4 +1,4 @@
-<h1>Liste Professeurs</h1>
+<h1>Liste Notes</h1>
 
 <div class="cards-view">
   <div class="card-single-view">
@@ -13,40 +13,24 @@
 
 <table id="customers">
   <tr>
-    <th>Nom</th>
-    <th>Sexe</th>
-    <th>Adresse</th>
-    <th>Disciplines</th>
-    <th>Telephone</th>
-    <th>Email</th>
-    <th>Classe</th>
+    <th>Designation</th>
+    <th>Moyenne</th>
+    <th>Type evaluation</th>
   </tr>
   <tr>
     <td>Alfreds Futterkiste</td>
     <td>Maria Anders</td>
     <td>Germany</td>
-    <td>Alfreds Futterkiste</td>
-    <td>Maria Anders</td>
-    <td>Germany</td>
-    <td>Alfreds Futterkiste</td>
   </tr>
   <tr>
     <td>Alfreds Futterkiste</td>
     <td>Maria Anders</td>
     <td>Germany</td>
-    <td>Alfreds Futterkiste</td>
-    <td>Maria Anders</td>
-    <td>Germany</td>
-    <td>Alfreds Futterkiste</td>
   </tr>
   <tr>
     <td>Alfreds Futterkiste</td>
     <td>Maria Anders</td>
     <td>Germany</td>
-    <td>Alfreds Futterkiste</td>
-    <td>Maria Anders</td>
-    <td>Germany</td>
-    <td>Alfreds Futterkiste</td>
   </tr>
 </table>
 

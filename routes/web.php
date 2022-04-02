@@ -19,15 +19,7 @@ Route::get('/', [App\Http\Controllers\HomeController::class, 'index']);
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 
-// Route::get('/', function () {
-//     return view('home');
-// });
-
 Route::get('/page/{mapage}', function ($mapage)
 {
     return view('pages.'.$mapage);
 });
-
-Auth::routes();
-
-Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');

@@ -34,7 +34,7 @@ section.lateralmenu {
     left: 0;
     top: 0;
     height: 100vh;
-    background: #008ea1;
+    background: #04AA6D;/* #008ea1; */
     z-index: 100;
     transition: width 300ms;
     }
@@ -69,7 +69,7 @@ section.lateralmenu {
     background: #fff;
     padding-top: 1rem;
     padding-bottom: 1rem;
-    color: #008ea1;
+    color: #04AA6D; /*#008ea1;*/
     border-radius: 30px 0px 0px 0px;
     }
     .content{
@@ -93,12 +93,12 @@ section.lateralmenu {
     
     .accueil{
     font-size: 1.5rem;
-    padding-right: : 1rem;
+    padding-right: 1rem;
     margin-left: 15px;
-    color: #008ea1;
+    color: #04AA6D;
     }
     .search-wrapper{
-    border: 1px solid #008ea1;
+    border: 1px solid #04AA6D;
     border-radius: 20px;
     height: 38px;
     display: flex;
@@ -115,7 +115,7 @@ section.lateralmenu {
     display: inline-block;
     padding: 0rem 1rem;
     font-size: 1.5rem;
-    color: #008ea1;
+    color: #04AA6D;
     }
     .user-wrapper{
     display: flex;
@@ -155,7 +155,31 @@ section.lateralmenu {
     .dropdown-content p{
     padding: .5rem;
     }
+
+  #customers {
+    font-family: Arial, Helvetica, sans-serif;
+    border-collapse: collapse;
+    width: 100%;
+    margin-top: 5rem;
+  }
+  
+  #customers td, #customers th {
+    border: 1px solid #ddd;
+    padding: 8px;
+  }
+  
+  #customers tr:nth-child(even){background-color: #f2f2f2;}
+  
+  #customers tr:hover {background-color: #ddd;}
     
+  #customers th {
+    padding-top: 12px;
+    padding-bottom: 12px;
+    text-align: left;
+    background-color: #04AA6D;
+    color: white;
+  }
+  
     
     main{
     margin-top: 50px;
@@ -187,9 +211,67 @@ section.lateralmenu {
     color: grey;
     }
     .card-single:hover{
-    background: #008ea1;
-    color: #fff;
+      background: #04AA6D;
+      color: #fff;
     }
+
+  .cards-view{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 1rem;
+    }
+  
+  .card-single-view{
+    display: flex;
+    flex-wrap: wrap;
+    background: #fff;
+    width: 800px;
+    justify-content: space-between;
+    padding: 2rem;
+    border-radius: 10px;
+    box-shadow: 2px 5px 10px 2px rgb(0 0 0 / 10%);
+  }
+
+  .filter-icon, .fa-dropdown {
+    color: #101213;
+    font-size: 30px;
+  }
+
+  .fa-dropdown button {
+    width: 60px;
+    border: none;
+    box-shadow: 2px 5px 10px 2px rgb(0 0 0 / 10%);
+  }
+  .add-plus{
+    margin: 2rem;
+  }
+  .add-plus button {
+    background: #04AA6D;
+    border: none;
+    padding: 1.2rem;
+    box-shadow: 2px 5px 10px 2px rgb(0 0 0 / 10%);
+  }
+
+  .add-plus button:hover {
+    background: none;
+  }
+  .add-plus button i {
+    color: #fff;
+    font-size: 30px;
+  }
+
+
+  .cards-up{
+  display: flex;
+  flex-wrap: wrap;
+  background: #fff;
+  justify-content: space-between;
+  padding: 2rem;
+  border-radius: 10px;
+  box-shadow: 2px 5px 10px 2px rgb(0 0 0 / 10%);
+}
     .composant{
     margin-top: 3.5rem;
     display: grid;
@@ -209,7 +291,7 @@ section.lateralmenu {
     align-items: center;
     }
     .header-case button{
-    background: #008ea1;
+    background: #04AA6D;
     border-radius: 10px;
     color: #fff;
     font-size: .8rem;
@@ -365,6 +447,10 @@ section.lateralmenu {
     padding: 1rem;
     font-weight: 500;
     color: grey;
+    }
+
+    .avatar-online i {
+      background-color : #37BC9B;
     }
     
     #menu:checked ~ .sidebar{
@@ -557,5 +643,3 @@ section.lateralmenu {
     width: calc(100% - 60px);
     left: 60px;
     }
-    
-    
