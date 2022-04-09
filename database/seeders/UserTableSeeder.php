@@ -44,7 +44,7 @@ class UserTableSeeder extends Seeder
         }
         $role->syncPermissions(Permission::all());
         $users = array();
-        array_push($users,array("name" => "Memoire", "email" => "root@memoire.edu.sn", "image" =>('css/img/img.png'), "password" => "rootM@2022"));
+        array_push($users,array("name" => "Memoire", "email" => "root@memoire.edu.sn", "image" =>('css/img/grad.jpeg'), "password" => "rootM@2022"));
 
         foreach ($users as $user) {
             $newuser = User::where('email', $user['email'])->first();

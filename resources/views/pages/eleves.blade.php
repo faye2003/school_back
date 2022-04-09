@@ -3,11 +3,22 @@
 <div class="cards-view">
   <div class="card-single-view">
       <div class="filter-icon"><i class="fa fa-filter"></i> Filtre</div>
-      <div class="fa-dropdown"><button><i class="fa fa-angle-down"></i></button></div>
+      <div class="fa-dropdown"><button onclick="myFunctionFilter"><i class="fa fa-angle-down"></i></button></div>
   </div>
 
   <div class="add-plus">
     <button><i class="fa fa-plus"></i></button>
+  </div>
+</div>
+
+<div class="dropdown-filter" id="dropdown-filter">
+  <div class="form-group">
+    <label class="sr-only" for="email">Email address:</label>
+    <input type="email" class="form-control" id="email">
+  </div>
+  <div class="form-group">
+    <label class="sr-only" for="pwd">Password:</label>
+    <input type="password" class="form-control" id="pwd">
   </div>
 </div>
 

@@ -262,6 +262,12 @@ section.lateralmenu {
     font-size: 30px;
   }
 
+  .dropdown-filter {
+    display: none;
+    position: absolute;
+    z-index: 1;
+  }
+
 
   .cards-up{
   display: flex;

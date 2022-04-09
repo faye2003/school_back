@@ -43,6 +43,16 @@ app.config(function ($routeProvider) {
     });
 });
 
+// function myFunctionFilter() {
+//     document.getElementById("dropdown-filter").classList.toggle("show");
+// }
+
+// window.onclick = function (event) {
+//     if (1event.target.matches('')) {
+        
+//     }
+// }
+
 app.controller('myController', ['$scope', function ($scope) {
     
 }]);
