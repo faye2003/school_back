@@ -4,6 +4,11 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
+use App\Models\Inscriptions;
+use App\Models\Series;
+use App\Models\Cours;
+use App\Models\Disciplines;
+use App\Models\Classes;
 
 class Eleves extends Model
 {

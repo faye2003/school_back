@@ -7,7 +7,7 @@
   </div>
 
   <div class="add-plus">
-    <button><i class="fa fa-plus"></i></button>
+    <button id="myBtn"><i class="fa fa-plus"></i></button>
   </div>
 </div>
 
@@ -74,5 +74,26 @@
     <td>Maria Anders</td>
   </tr>
 </table>
+<script>
+  console.log('iiyo');
+var modal = document.getElementById("modalAddEleve");
 
+var btn = document.getElementById("myBtn");
+var span = document.getElementsByClassName("close")[0];
+
+btn.onclick = function() {
+    console.log('iciiii');
+modal.style.display = "block";
+}
+
+span.onclick = function() {
+modal.style.display = "none";
+}
+
+window.onclick = function(event) {
+  if (event.target == modal) {
+    modal.style.display = "none";
+  } 
+}
+</script>
 

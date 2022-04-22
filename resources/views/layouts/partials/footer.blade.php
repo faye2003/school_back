@@ -8,5 +8,5 @@
 <script type="text/javascript" src="{{ asset('bower_components/bootstrap/dist/js/bootstrap.min.js')}}"></script>
 <script type="text/javascript" src="{{ asset('bower_components/gn-load/ng-load.js') }}"></script>
 
-<script src="{{ asset('bower_components/angular/memoire.js') }}"></script>
+<script src="{{ asset('bower_components/angular/memoire.js') }}" defer></script>
 </body>

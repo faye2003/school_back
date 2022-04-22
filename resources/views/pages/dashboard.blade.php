@@ -2,8 +2,8 @@
 <div class="cards">
 <div class="card-single">
 <div>
-<h2>2.000.000</h2>
-<small>Ventes</small>
+<h2>20</h2>
+<small>Classes</small>
 </div>
 <div>
 <span class="fa fa-shopping-cart"></span>
@@ -13,7 +13,7 @@
 <div class="card-single">
 <div>
 <h2>+30</h2>
-<small>Stock</small>
+<small>Professeurs</small>
 </div>
 <div>
 <span class="fa fa-newspaper-o"></span>
@@ -22,7 +22,7 @@
 <div class="card-single">
 <div>
 <h2>58</h2>
-<small>Fournisseur</small>
+<small>Disciplines</small>
 </div>
 <div>
 <span class="fa fa-outdent"></span>
@@ -31,7 +31,7 @@
 <div class="card-single">
 <div>
 <h2>20k</h2>
-<small>Communauté</small>
+<small>Eleves</small>
 </div>
 <div>
 <span class="fa fa-group"></span>
@@ -43,7 +43,7 @@
 <div class="ventes">
 <div class="case">
 <div class="header-case">
-<h2>Listes produits</h2>
+<h2>Listes Surveillants</h2>
 <button class="button">voir plus<span class="fa fa-arrow-right"></span></button>
 </div>
 <div class="body-case">
@@ -94,7 +94,7 @@
 <div class="stock">
 <div class="case">
 <div class="header-case">
-<h2>Clients Fidèles</h2>
+<h2>Meilleurs Eleves</h2>
 
 </div>
 <div class="body-case">
@@ -184,13 +184,13 @@
 <div class="statistique-barre bar6"></div>
 </div>
 <div class="legende">
-<h4>Legende</h4>
+<h4>Taux de reussite</h4>
 <table>
 <tr>
-<td><span class="evolution color-one"></span>Riz</td>
+<td><span class="evolution color-two"></span>Passants</td>
 </tr>
 <tr>
-<td><span class="evolution color-two"></span>Mil</td>
+<td><span class="evolution color-one"></span>Doublants</td>
 </tr>
 </table>
 <div class="txt-deco">

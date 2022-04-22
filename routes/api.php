@@ -8,6 +8,8 @@ use App\Http\Controllers\ProductController;
 Route::post('login', [ApiController::class, 'authenticate']);
 Route::post('register', [ApiController::class, 'register']);
 
+Route::post('eleves', [ElevesController::class, 'save']);
+
 Route::group(['middleware' => ['jwt.verify']], function() {
     Route::get('logout', [ApiController::class, 'logout']);
     Route::get('get_user', [ApiController::class, 'get_user']);

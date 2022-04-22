@@ -23,3 +23,5 @@ Route::get('/page/{mapage}', function ($mapage)
 {
     return view('pages.'.$mapage);
 });
+
+Route::post('eleves', [App\Http\Controllers\ElevesController::class, 'save']);
