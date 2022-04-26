@@ -16,6 +16,15 @@ class EleveType extends GraphQLType
     public function fields(): array
     {
         return [
+            'id'                   => ['type' => Type::int()],
+            'nom'                  => ['type' => Type::string()],
+            'prenom'               => ['type' => Type::string()],
+            'telephone'            => ['type' => Type::string()],
+            'classe'               => ['type' => Type::string()],
+            'age'                  => ['type' => Type::int()],
+            'sexe'                 => ['type' => Type::string()],
+            'niveau'               => ['type' => Type::string()],
+            'moyenne'              => ['type' => Type::string()],
 
         ];
     }

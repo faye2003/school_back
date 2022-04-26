@@ -9,6 +9,8 @@ use GraphQL\Type\Definition\ResolveInfo;
 use GraphQL\Type\Definition\Type;
 use Rebing\GraphQL\Support\Query;
 use Rebing\GraphQL\Support\SelectFields;
+use App\Models\Eleves;
+use App\GraphQl\Types\EleveType;
 
 class EleveQuery extends Query
 {
@@ -25,6 +27,15 @@ class EleveQuery extends Query
     public function args(): array
     {
         return [
+            'id'                   => ['type' => Type::int()],
+            'nom'                  => ['type' => Type::string()],
+            'prenom'               => ['type' => Type::string()],
+            'telephone'            => ['type' => Type::string()],
+            'classe'               => ['type' => Type::string()],
+            'age'                  => ['type' => Type::int()],
+            'sexe'                 => ['type' => Type::string()],
+            'niveau'               => ['type' => Type::string()],
+            'moyenne'              => ['type' => Type::string()],
 
         ];
     }
@@ -32,12 +43,10 @@ class EleveQuery extends Query
     public function resolve($root, array $args, $context, ResolveInfo $resolveInfo, Closure $getSelectFields)
     {
         /** @var SelectFields $fields */
-        $fields = $getSelectFields();
-        $select = $fields->getSelect();
-        $with = $fields->getRelations();
+        // $fields = $getSelectFields();
+        // $select = $fields->getSelect();
+        // $with = $fields->getRelations();
 
-        return [
-            'The eleve works',
-        ];
+        return Eleves::All();
     }
 }

@@ -1,4 +1,5 @@
 <script type="text/javascript" src="{{ asset('bower_components/angular/angular.min.js') }}"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.8.2/angular.min.js"></script>
 <script type="text/javascript" src="{{ asset('bower_components/angular-route/angular-route.min.js') }}"></script>
 <script type="text/javascript" src="{{ asset('bower_components/angular-cookies/angular-cookies.min.js') }}"></script>
 <script type="text/javascript" src="{{ asset('bower_components/angular-filter/angular-filter.min.js') }}"></script>

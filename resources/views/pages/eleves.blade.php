@@ -32,7 +32,7 @@
   </div>
 </div> -->
 
-<table id="customers">
+<table ng-controller="MyController" id="customers">
   <tr>
     <th>Nom</th>
     <th>Prenom</th>
@@ -43,15 +43,15 @@
     <th>Classe</th>
     <th>Moyenne</th>
   </tr>
-  <tr>
-    <td>Alfreds Futterkiste</td>
-    <td>Maria Anders</td>
-    <td>Germany</td>
-    <td>Alfreds Futterkiste</td>
-    <td>Maria Anders</td>
-    <td>Germany</td>
-    <td>Alfreds Futterkiste</td>
-    <td>Maria Anders</td>
+  <tr ng-repeat="eleve in eleves">
+    <td>@{{eleve.nom}}</td>
+    <td>@{{eleve.prenom}}</td>
+    <td>@{{eleve.telephone}}</td>
+    <td>@{{eleve.niveau}}</td>
+    <td>@{{eleve.age}}</td>
+    <td>@{{eleve.sexe}}</td>
+    <td>@{{eleve.classe}}</td>
+    <td>@{{eleve.moyenne}}</td>
   </tr>
   <tr>
     <td>Alfreds Futterkiste</td>
