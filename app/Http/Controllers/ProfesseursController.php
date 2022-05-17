@@ -15,14 +15,14 @@ class ProfesseursController extends Controller
             return DB::transaction(function () use ($request)
             {
                 $errors = null;
-                $item = new Professeurs;
-                $item->nom = $request['nom'];
-                $item->prenom = $request['prenom'];
-                $item->email = $request['email'];
-                $item->telephone = $request['telephone'];
-                $item->sexe = $request['sexe'];
-                $item->adresse = $request['adresse'];
-                $item->discipline = $request['discipline'];
+                $item = new Professeurs();
+                $item->nom = $request->nom;
+                $item->prenom = $request->prenom;
+                $item->email = $request->email;
+                $item->telephone = $request->telephone;
+                $item->sexe = $request->sexe;
+                $item->adresse = $request->adresse;
+                $item->discipline = $request->discipline;
                 $item->save();
 
                 return redirect('/#!/profs')->with('status', 'Professeurs enregistreeee avec success!');
