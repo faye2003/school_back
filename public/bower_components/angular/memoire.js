@@ -4,8 +4,9 @@ app.factory('MyFactory', function ($http, $q)
 {
     let factory = {
         data : false,
-        getEleve: function () 
+        getEleve: function (dataget=null) 
         {
+            console.log("ici les eleves");
             let deferred = $q.defer();
             console.log(dataget);
             $http({
@@ -17,13 +18,14 @@ app.factory('MyFactory', function ($http, $q)
                 data: dataget
             }).then( function successCallback(response)
             {
-                factory.data = response['data']['data'];
+                factory.data = response['data']['eleves'];
                 console.log(response['data']);
-                deferred.resolve(data);
+                deferred.resolve(factory.data);
             }, function errorCallback(error) {
                 console.log('Erreur serveur', error);
                 deferred.reject("Erreur veuillez contactez le support technique!");
             });
+            console.log(deferred.promise);
             return deferred.promise;
         }
     };
@@ -75,7 +77,13 @@ app.config(function ($routeProvider) {
     });
 });
 
-app.controller('MyController', ['MyFactory', function ($scope, MyFactory) {
-    console.log("ici controller");
+app.controller('MyController', function ($scope, MyFactory) {
+    //console.log("ici controller");
     $scope.eleves = MyFactory.getEleve();
-}]);
+    console.log($scope.eleves);
+});
+
+
+// app.controller('MyController', ['MyFactory', function ($scope, MyFactory) {
+//     $scope.eleves = MyFactory.getEleve();
+// }]);

@@ -9,19 +9,20 @@ use GraphQL\Type\Definition\ResolveInfo;
 use GraphQL\Type\Definition\Type;
 use Rebing\GraphQL\Support\Query;
 use Rebing\GraphQL\Support\SelectFields;
+use Rebing\GraphQL\Support\Facades\GraphQL;
 use App\Models\Eleves;
 use App\GraphQl\Types\EleveType;
 
 class EleveQuery extends Query
 {
     protected $attributes = [
-        'name' => 'eleve',
+        'name' => 'eleves',
         'description' => 'A query'
     ];
 
     public function type(): Type
     {
-        return Type::listOf(Type::string());
+        return Type::listOf(GraphQl::type('Eleve'));
     }
 
     public function args(): array

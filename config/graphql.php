@@ -20,7 +20,7 @@ return [
         //
         // 'group_attributes' => ['guard' => 'api']
         //
-        'group_attributes' => [],
+        'route_group_attributes' => [],
     ],
 
     // The name of the default schema
@@ -97,7 +97,7 @@ return [
             ],
 
             // Laravel HTTP middleware
-            'middleware' => ['web', 'auth.basic'],
+            'middleware' => ['web'],
 
             // Which HTTP methods to support; must be given in UPPERCASE!
             'method' => ['GET', 'POST'],
@@ -137,7 +137,7 @@ return [
     // The types will be loaded on demand. Default is to load all types on each request
     // Can increase performance on schemes with many types
     // Presupposes the config type key to match the type class name property
-    'lazyload_types' => true,
+    'lazyload_types' => false,
 
     // This callable will be passed the Error object for each errors GraphQL catch.
     // The method should return an array representing the error.
@@ -188,7 +188,7 @@ return [
         'controller' => \Rebing\GraphQL\GraphQLController::class . '@graphiql',
         'middleware' => [],
         'view' => 'graphql::graphiql',
-        'display' => env('ENABLE_GRAPHIQL', true),
+        'display' => env('ENABLE_GRAPHIQL', false),
     ],
 
     /*

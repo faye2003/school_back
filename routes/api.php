@@ -4,11 +4,14 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\ApiController;
 use App\Http\Controllers\ProductController;
+use App\Http\Controllers\EvaluationsController;
+use App\Http\Controllers\ElevesController;
 
 Route::post('login', [ApiController::class, 'authenticate']);
 Route::post('register', [ApiController::class, 'register']);
 
 Route::post('eleves', [ElevesController::class, 'save']);
+Route::post('evaluations', [EvaluationsController::class, 'save']);
 
 Route::group(['middleware' => ['jwt.verify']], function() {
     Route::get('logout', [ApiController::class, 'logout']);

@@ -89,6 +89,10 @@ section.lateralmenu {
     z-index: 100;
     transition: left 300ms;
     }
+
+    h1{
+      margin-top: 1rem;
+    }
     
     
     .accueil{
@@ -284,7 +288,9 @@ section.lateralmenu {
   display: none; /* Hidden by default */
   position: fixed; /* Stay in place */
   z-index: 1; /* Sit on top */
-  padding-top: 100px; /* Location of the box */
+  padding-top: 10rem; /* Location of the box */
+  padding-left: 20rem;
+  padding-right: 10rem;
   left: 0;
   top: 0;
   width: 100%; /* Full width */
@@ -300,7 +306,7 @@ section.lateralmenu {
   margin: auto;
   padding: 20px;
   border: 1px solid #888;
-  width: 80%;
+  width: 100%;
 }
 
 /* The Close Button */

@@ -1,4 +1,5 @@
-<h1>Liste Eleves</h1>
+<div ng-controller="MyController">
+<h1 style="margin-top: 1rem">Liste Eleves</h1>
 
 <div class="cards-view">
   <div class="card-single-view">
@@ -32,48 +33,29 @@
   </div>
 </div> -->
 
-<table ng-controller="MyController" id="customers">
+<table id="customers">
   <tr>
+    <th>#</th>
     <th>Nom</th>
     <th>Prenom</th>
     <th>Telephone</th>
-    <th>Niveau</th>
+    <th>Classe</th>
     <th>Age</th>
     <th>Sexe</th>
-    <th>Classe</th>
     <th>Moyenne</th>
   </tr>
-  <tr ng-repeat="eleve in eleves">
-    <td>@{{eleve.nom}}</td>
-    <td>@{{eleve.prenom}}</td>
-    <td>@{{eleve.telephone}}</td>
-    <td>@{{eleve.niveau}}</td>
-    <td>@{{eleve.age}}</td>
-    <td>@{{eleve.sexe}}</td>
-    <td>@{{eleve.classe}}</td>
-    <td>@{{eleve.moyenne}}</td>
-  </tr>
-  <tr>
-    <td>Alfreds Futterkiste</td>
-    <td>Maria Anders</td>
-    <td>Germany</td>
-    <td>Alfreds Futterkiste</td>
-    <td>Maria Anders</td>
-    <td>Germany</td>
-    <td>Alfreds Futterkiste</td>
-    <td>Maria Anders</td>
-  </tr>
-  <tr>
-    <td>Alfreds Futterkiste</td>
-    <td>Maria Anders</td>
-    <td>Germany</td>
-    <td>Alfreds Futterkiste</td>
-    <td>Maria Anders</td>
-    <td>Germany</td>
-    <td>Alfreds Futterkiste</td>
-    <td>Maria Anders</td>
+  <tr ng-repeat="item in eleves">
+    <th>@{{item.id}}</th>
+    <td>@{{item.nom}}</td>
+    <td>@{{item.prenom}}</td>
+    <td>@{{item.telephone}}</td>
+    <td>@{{item.classe}}</td>
+    <td>@{{item.age}}</td>
+    <td>@{{item.sexe}}</td>
+    <td>@{{item.moyenne}}</td>
   </tr>
 </table>
+</div>
 <script>
   console.log('iiyo');
 var modal = document.getElementById("modalAddEleve");

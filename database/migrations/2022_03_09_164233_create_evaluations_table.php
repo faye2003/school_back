@@ -19,7 +19,7 @@ class CreateEvaluationsTable extends Migration
             $table->string('description')->nullable();
             $table->string('surveillant');
             $table->time('duree');
-            $table->string('salle');
+            $table->string('salle'); 
 
             $table->timestamps();
         });

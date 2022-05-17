@@ -162,6 +162,7 @@ return [
         Illuminate\Validation\ValidationServiceProvider::class,
         Illuminate\View\ViewServiceProvider::class,
         Spatie\Permission\PermissionServiceProvider::class,
+        Rebing\GraphQL\GraphQLServiceProvider::class,
         'Tymon\JWTAuth\Providers\LaravelServiceProvider',
 
         /*
@@ -232,6 +233,7 @@ return [
         'Validator' => Illuminate\Support\Facades\Validator::class,
         'View' => Illuminate\Support\Facades\View::class,
         'JWTAuth' => Tymon\JWTAuth\Facades\JWTAuth::class,
+        'GraphQL' => 'Rebing\GraphQL\Support\Facades\GraphQL',
         'JWTFactory' => Tymon\JWTAuth\Facades\JWTFactory::class,
 
     ],

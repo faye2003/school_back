@@ -57,7 +57,7 @@
             "php artisan clear-compiled",
             "composer dumpautoload",
             "php artisan config:cache",
-            "sudo chmod -R 777 public/uploads/ storage/"
+            "sudo chmod -R 777 storage/"
         ]
     },
     "extra": {

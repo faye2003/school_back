@@ -14,7 +14,9 @@ class Eleves extends Model
 {
     use HasFactory;
 
-    protected $guarded = [];
+    //protected $guarded = [];
+    protected $table = 'eleves';
+    protected $fillable = ['id', 'nom', 'prenom', 'telephone', 'classe', 'age', 'sexe', 'moyenne'];
 
     public function inscriptions ()
     {
