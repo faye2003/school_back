@@ -25,7 +25,8 @@ Route::get('/page/{mapage}', function ($mapage)
 });
 
 Route::post('eleves', [App\Http\Controllers\ElevesController::class, 'save']);
-Route::post('profs', [App\Http\Controllers\ProfesseursController::class, 'save']);
+Route::post('profs', [App\Http\Controllers\EnseignantsController::class, 'save']);
 Route::post('evaluations', [App\Http\Controllers\EvaluationsController::class, 'save']);
 Route::post('cours', [App\Http\Controllers\CoursController::class, 'save']);
 Route::post('discipline', [App\Http\Controllers\DisciplinesController::class, 'save']);
+Route::post('emploi', [App\Http\Controllers\EmploisController::class, 'save']);
