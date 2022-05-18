@@ -235,7 +235,7 @@
 </div>
 
 <!-- Modal to save Emploi -->
-<div id="modalAddDiscipline" class="modal">
+<div id="modalAddEmploi" class="modal">
 
   <!-- Modal content -->
   <div class="modal-content">
@@ -246,7 +246,7 @@
     </div>
   @endif
     <div class="container">
-      <form method="post" action="{{url('emplois')}}">
+      <form method="post" action="{{url('emploi')}}">
         @csrf
         <div class="row">
           <div class="col">
@@ -254,6 +254,35 @@
           </div>
           <div class="col">
             <input type="text" class="form-control" id="designation" placeholder="Designation" name="designation">
+          </div>
+        </div>
+        <button type="submit" class="btn btn-success mt-3">Enregistrer</button>
+      </form>
+    </div>
+  </div>
+
+</div>
+
+<!-- Modal to save Cycles -->
+<div id="modalAddCycle" class="modal">
+
+  <!-- Modal content -->
+  <div class="modal-content">
+    <span class="close">&times;</span>
+    @if(session('status'))
+    <div class="alert alert-success">
+        {{ session('status') }}
+    </div>
+  @endif
+    <div class="container">
+      <form method="post" action="{{url('niveau')}}">
+        @csrf
+        <div class="row">
+          <div class="col">
+            <input type="text" class="form-control" id="designation" placeholder="Designation" name="designation">
+          </div>
+          <div class="col">
+            <input type="text" class="form-control" id="description" placeholder="Description" name="description">
           </div>
         </div>
         <button type="submit" class="btn btn-success mt-3">Enregistrer</button>

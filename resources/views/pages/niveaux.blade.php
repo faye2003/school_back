@@ -7,7 +7,7 @@
   </div>
 
   <div class="add-plus">
-    <button><i class="fa fa-plus"></i></button>
+    <button id="myBtn"><i class="fa fa-plus"></i></button>
   </div>
 </div>
 
@@ -30,4 +30,24 @@
   </tr>
 </table>
 
+<script>
+  var modal = document.getElementById("modalAddCycle");
 
+  var btn = document.getElementById("myBtn");
+  var span = document.getElementsByClassName("close")[0];
+
+  btn.onclick = function() {
+      console.log('iciiii');
+  modal.style.display = "block";
+  }
+
+  span.onclick = function() {
+  modal.style.display = "none";
+  }
+
+  window.onclick = function(event) {
+    if (event.target == modal) {
+      modal.style.display = "none";
+    } 
+  }
+</script>

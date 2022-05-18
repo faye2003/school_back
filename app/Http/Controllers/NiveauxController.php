@@ -5,22 +5,23 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use Illuminate\Http\Response;
 use Illuminate\Support\Facades\DB;
-use App\Models\Emplois;
+use App\Models\Niveaux;
 
-class EmploisController extends Controller
+class NiveauxController extends Controller
 {
-    public function save (Request $request)
+    public function save(Request $request)
     {
+        //dd($request->all());
         try {
             return DB::transaction(function () use ($request)
             {
                 $errors = null;
-                $item = new Emplois();
-                $item->titre = $request->titre;
-                $item->description = $request->designation;
+                $item = new Niveaux();
+                $item->designation = $request->designation;
+                $item->description = $request->description;
                 $item->save();
 
-                return redirect('/#!/emplois')->with('status', 'Emploi has been saved with success');
+                return redirect('/#!/niveau')->with('status', 'Cycle saved successfully');
             });
         } catch (\Throwable $th) {
             //throw $th;
