@@ -13,16 +13,16 @@ class EvaluationsController extends Controller
     {
         //dd($request->all());
         try {
-            return DB::transaction( function () use ($request) 
+            return DB::transaction(function () use ($request) 
             {
                 //dd($request->all());
                 $errors = null;
-                $item = new Evaluations;
-                $item->designation = $request['designation'];
-                $item->description = $request['description'];
-                $item->surveillant = $request['surveillant'];
-                $item->duree = $request['duree'];
-                $item->salle = $request['salle'];
+                $item = new Evaluations();
+                $item->designation = $request->designation;
+                $item->description = $request->description;
+                $item->surveillant = $request->surveillant;
+                $item->duree = $request->duree;
+                $item->salle = $request->salle;
                 $item->save();
 
                 return redirect('/#!/evaluations')->with('status', 'Evaluations saved with successfully');

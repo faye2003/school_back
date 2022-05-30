@@ -1,10 +1,9 @@
-<div ng-controller="MyController">
 <h1 style="margin-top: 1rem">Liste Eleves</h1>
 
 <div class="cards-view">
   <div class="card-single-view">
       <div class="filter-icon"><i class="fa fa-filter"></i> Filtre</div>
-      <div class="fa-dropdown"><button onclick="myFunctionFilter"><i class="fa fa-angle-down"></i></button></div>
+      <div class="fa-dropdown"><button ng-click="myFunctionFilter()" class="dropdownbtn"><i class="fa fa-angle-down"></i></button></div>
   </div>
 
   <div class="add-plus">
@@ -12,15 +11,40 @@
   </div>
 </div>
 
-<div class="dropdown-filter" id="dropdown-filter">
-  <div class="form-group">
-    <label class="sr-only" for="email">Email address:</label>
-    <input type="email" class="form-control" id="email">
-  </div>
-  <div class="form-group">
-    <label class="sr-only" for="pwd">Password:</label>
-    <input type="password" class="form-control" id="pwd">
-  </div>
+<div class="dropdown-filter" id="dropdown-filter" ng-show="showFilter">
+  <form method="post">
+    @csrf
+    <div class="row">
+        <div class="col-sm-3">
+          <input type="text" class="form-control" id="email" placeholder="Nom" name="nom">
+        </div>
+        <div class="col-sm-3">
+          <input type="text" class="form-control" placeholder="Prenom" name="prenom">
+        </div>
+        <div class="col-sm-3">
+          <input type="text" class="form-control" id="telephone" placeholder="Telephone" name="telephone">
+        </div>
+        <div class="col-sm-3">
+          <input type="text" class="form-control" placeholder="Classe" name="classe">
+        </div>
+      </div><br>
+      <div class="row">
+        <div class="col-sm-4">
+          <input type="number" class="form-control" id="age" placeholder="Age" name="age">
+        </div>
+        <div class="col-sm-4">
+          <select type="text" class="form-control" placeholder="Sexe" name="sexe">
+            <option value="default">Sexe</option>
+            <option value="homme">Homme</option>
+            <option value="femme">Femme</option>
+          </select>
+        </div>
+        <div class="col-sm-4">
+          <input type="number" class="form-control" id="moyenne" placeholder="Moyenne" name="moyenne">
+        </div>
+      </div>
+      <button type="submit" class="btn btn-success mt-3">Filtrer</button>
+    </form>
 </div>
 
 <!-- <div class="cards-up">
@@ -55,7 +79,7 @@
     <td>@{{item.moyenne}}</td>
   </tr>
 </table>
-</div>
+
 <script>
   console.log('iiyo');
 var modal = document.getElementById("modalAddEleve");
@@ -77,5 +101,6 @@ window.onclick = function(event) {
     modal.style.display = "none";
   } 
 }
+
 </script>
 

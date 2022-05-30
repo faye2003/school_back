@@ -5,6 +5,7 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use App\Models\Disciplines;
+use App\Models\TypeEvaluations;
 
 class Evaluations extends Model
 {

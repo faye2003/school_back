@@ -4,7 +4,7 @@ app.factory('MyFactory', function ($http, $q)
 {
     let factory = {
         data : false,
-        getEleve: function (dataget=null) 
+        getEleve:function (dataget=null) 
         {
             console.log("ici les eleves");
             let deferred = $q.defer();
@@ -16,16 +16,42 @@ app.factory('MyFactory', function ($http, $q)
                     'contentType' : 'application/graphql',
                 },
                 data: dataget
-            }).then( function successCallback(response)
+            }).then(function successCallback(response)
             {
                 factory.data = response['data']['eleves'];
                 console.log(response['data']);
                 deferred.resolve(factory.data);
-            }, function errorCallback(error) {
+            },function errorCallback(error) {
                 console.log('Erreur serveur', error);
                 deferred.reject("Erreur veuillez contactez le support technique!");
             });
             console.log(deferred.promise);
+            return deferred.promise;
+        },
+        getProfesseur:function (element, is_graphQL=true, dataget=null)
+        {
+            let deferred = $q.defer();
+            console.log(dataget);
+            $http({
+                method:'GET',
+                url: '//'+location.host+'/memoire_back/public/'+ (is_graphQL ? '/graphql?query={enseignants{id,nom,prenom,email,telephone,adresse,sexe,discipline}}':element),
+                headers: {
+                    'contentType' : 'application/graphql',
+                },
+                data:dataget
+            }).then(function successCallback(response)
+            {
+                if (is_graphQL) {
+                    factory.data = response['data']['enseignants'];
+                    console.log(response['data']);
+                }else {
+                    factory.data = response['data'];
+                }
+                deferred.resolve(factory.data);
+            },function errorCallback(error) {
+                console.log('Erreur serveur',error);
+                deferred.reject("Erreur veuillez contacter le support technique!");
+            });
             return deferred.promise;
         }
     };
@@ -78,12 +104,15 @@ app.config(function ($routeProvider) {
 });
 
 app.controller('MyController', function ($scope, MyFactory) {
-    //console.log("ici controller");
+    console.log("ici controller");
     $scope.eleves = MyFactory.getEleve();
-    console.log($scope.eleves);
+    $scope.enseignants = MyFactory.getProfesseur();
+
+    $scope.showFilter = false;
+
+    $scope.myFunctionFilter =  function ()
+    {
+        console.log("ici ma fonction");
+        $scope.showFilter = $scope.showFilter ? false : true;
+    }
 });
-
-
-// app.controller('MyController', ['MyFactory', function ($scope, MyFactory) {
-//     $scope.eleves = MyFactory.getEleve();
-// }]);

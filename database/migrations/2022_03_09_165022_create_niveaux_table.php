@@ -13,7 +13,7 @@ class CreateNiveauxTable extends Migration
      */
     public function up()
     {
-        Schema::create('niveaux', function (Blueprint $table) {
+        Schema::create('niveaus', function (Blueprint $table) {
             $table->id();
             $table->string('designation');
             $table->string('description')->nullable();

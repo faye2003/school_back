@@ -30,4 +30,4 @@ Route::post('evaluations', [App\Http\Controllers\EvaluationsController::class, '
 Route::post('cours', [App\Http\Controllers\CoursController::class, 'save']);
 Route::post('discipline', [App\Http\Controllers\DisciplinesController::class, 'save']);
 Route::post('emploi', [App\Http\Controllers\EmploisController::class, 'save']);
-Route::post('niveau', [App\Http\Controllers\NiveauxController::class, 'save']);
+Route::post('niveau', [App\Http\Controllers\NiveausController::class, 'save']);

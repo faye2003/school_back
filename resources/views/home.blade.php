@@ -144,7 +144,7 @@
           <input type="text" class="form-control" id="surveillant" placeholder="Surveillant" name="surveillant">
         </div>
         <div class="col">
-          <input type="text" class="form-control" id="duree" placeholder="Duree" name="duree">
+          <input type="time" class="form-control" id="duree" placeholder="Duree" name="duree">
         </div>
       </div><br>
         <div class="row">
@@ -276,6 +276,35 @@
   @endif
     <div class="container">
       <form method="post" action="{{url('niveau')}}">
+        @csrf
+        <div class="row">
+          <div class="col">
+            <input type="text" class="form-control" id="designation" placeholder="Designation" name="designation">
+          </div>
+          <div class="col">
+            <input type="text" class="form-control" id="description" placeholder="Description" name="description">
+          </div>
+        </div>
+        <button type="submit" class="btn btn-success mt-3">Enregistrer</button>
+      </form>
+    </div>
+  </div>
+
+</div>
+
+<!-- Modal to save notes -->
+<div id="modalAddNote" class="modal">
+
+  <!-- Modal content -->
+  <div class="modal-content">
+    <span class="close">&times;</span>
+    @if(session('status'))
+    <div class="alert alert-success">
+        {{ session('status') }}
+    </div>
+  @endif
+    <div class="container">
+      <form method="post" action="{{url('notes')}}">
         @csrf
         <div class="row">
           <div class="col">

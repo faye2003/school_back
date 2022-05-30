@@ -87,6 +87,7 @@ return [
                 App\GraphQL\Queries\OptionQuery::class,
                 App\GraphQL\Queries\SerieQuery::class,
                 App\GraphQL\Queries\TypeEvaluationQuery::class,
+                App\GraphQL\Queries\EnseignantQuery::class,
             ],
             'mutation' => [
                 // ExampleMutation::class,
@@ -132,6 +133,7 @@ return [
         'Option' => App\GraphQL\Types\OptionType::class,
         'TypeEvaluation' => App\GraphQL\Types\TypeEvaluationType::class,
         'Serie' => App\GraphQL\Types\SerieType::class,
+        'Enseignant' => App\GraphQL\Types\EnseignantType::class,
     ],
 
     // The types will be loaded on demand. Default is to load all types on each request

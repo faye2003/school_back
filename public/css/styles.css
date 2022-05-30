@@ -267,8 +267,7 @@ section.lateralmenu {
   }
 
   .dropdown-filter {
-    display: none;
-    position: absolute;
+    position: relative;
     z-index: 1;
   }
 
