@@ -28,25 +28,22 @@ app.factory('MyFactory', function ($http, $q)
             console.log(deferred.promise);
             return deferred.promise;
         },
-        getProfesseur:function (element, is_graphQL=true, dataget=null)
+        getProfesseur:function (dataget=null)
         {
             let deferred = $q.defer();
             console.log(dataget);
             $http({
                 method:'GET',
-                url: '//'+location.host+'/memoire_back/public/'+ (is_graphQL ? '/graphql?query={enseignants{id,nom,prenom,email,telephone,adresse,sexe,discipline}}':element),
+                url: 'graphql?query={enseignants{id,nom,prenom,email,telephone,adresse,sexe,discipline}}',
                 headers: {
                     'contentType' : 'application/graphql',
                 },
                 data:dataget
             }).then(function successCallback(response)
             {
-                if (is_graphQL) {
-                    factory.data = response['data']['enseignants'];
-                    console.log(response['data']);
-                }else {
-                    factory.data = response['data'];
-                }
+                factory.data = response['data']['enseignants'];
+                console.log(response['data']);
+                factory.data = response['data'];
                 deferred.resolve(factory.data);
             },function errorCallback(error) {
                 console.log('Erreur serveur',error);
@@ -104,8 +101,33 @@ app.config(function ($routeProvider) {
 });
 
 app.controller('MyController', function ($scope, MyFactory) {
-    console.log("ici controller");
+
+    console.log($scope);
+
     $scope.eleves = MyFactory.getEleve();
+    // $scope.eleves = [
+    //     {
+    //         "id" : 1,
+    //         "nom" : "Faye",
+    //         "prenom" : "Mamadou",
+    //         "telephone" : "773827653",
+    //         "classe" : "terminale",
+    //         "age" : 20,
+    //         "sexe" : "M",
+    //         "moyenne" : 13
+    //     },
+    //     {
+    //         "id" : 2,
+    //         "nom" : "Diouf",
+    //         "prenom" : "Ousmane",
+    //         "telephone" : "773827653",
+    //         "classe" : "terminale",
+    //         "age" : 24,
+    //         "sexe" : "M",
+    //         "moyenne" : 13
+    //     }
+    // ];
+
     $scope.enseignants = MyFactory.getProfesseur();
 
     $scope.showFilter = false;
