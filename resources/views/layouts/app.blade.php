@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="fr" ng-app="myApp" ng-controller="MyController">
+<html lang="fr" ng-app="myApp" ng-controller="MyController as ctrl">
 
 @include('layouts.partials.header')
 

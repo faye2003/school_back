@@ -12,13 +12,13 @@ app.factory('MyFactory', function ($http, $q)
             $http({
                 method: 'GET',
                 url: "graphql?query={eleves{id, nom, prenom, telephone, classe, age, sexe, moyenne}}",
-                header: {
+                headers: {
                     'contentType' : 'application/graphql',
                 },
                 data: dataget
             }).then(function successCallback(response)
             {
-                factory.data = response['data']['eleves'];
+                factory.data = response['data']['data']['eleves'];
                 console.log(response['data']);
                 deferred.resolve(factory.data);
             },function errorCallback(error) {
@@ -34,20 +34,63 @@ app.factory('MyFactory', function ($http, $q)
             console.log(dataget);
             $http({
                 method:'GET',
-                url: 'graphql?query={enseignants{id,nom,prenom,email,telephone,adresse,sexe,discipline}}',
+                url: "graphql?query={enseignants{id,nom,prenom,email,telephone,sexe,adresse,discipline}}",
                 headers: {
                     'contentType' : 'application/graphql',
                 },
                 data:dataget
             }).then(function successCallback(response)
             {
-                factory.data = response['data']['enseignants'];
+                factory.data = response['data']['data']['enseignants'];
                 console.log(response['data']);
-                factory.data = response['data'];
                 deferred.resolve(factory.data);
             },function errorCallback(error) {
                 console.log('Erreur serveur',error);
                 deferred.reject("Erreur veuillez contacter le support technique!");
+            });
+            return deferred.promise;
+        },
+        getDiscipline: function (dataget=null) 
+        {
+            let deferred = $q.defer();
+            console.log(dataget);
+            $http({
+                method: 'GET',
+                url: "graphql?query={disciplines{id,designation,description,sigle,coefficient}}",
+                headers: {
+                    'contentType' : 'application/graphql',
+                },
+                data: dataget
+            }).then(function successCallback(response) 
+            {
+                factory.data = response['data']['data']['disciplines'];
+                console.log(response['data']);
+                deferred.resolve(factory.data);
+            },function errorCallback(error) {
+                console.log('Erreur serveur', error);
+                deferred.reject('Erreur veuillez contacter le support technique!');
+            });
+            return deferred.promise;
+        },
+        getEmploi: function (dataget=null) 
+        {
+            let deferred = $q.defer();
+            console.log(dataget);
+            $http({
+                method: 'GET',
+                url: "graphql?query={emplois{id,titre,description}}",
+                headers: {
+                    'contentType' : 'application/graphql',
+                },
+                data: dataget
+            }).then(function successCallback(response) 
+            {
+                factory.data = response['data']['data']['emplois'];
+                console.log(response['data']);
+                deferred.resolve(factory.data);
+            },function errorCallback(error) {
+                console.log('Erreur serveur', error);
+                deferred.reject('Erreur veuillez contacter le support technique!');
             });
             return deferred.promise;
         }
@@ -102,39 +145,29 @@ app.config(function ($routeProvider) {
 
 app.controller('MyController', function ($scope, MyFactory) {
 
-    console.log($scope);
-
-    $scope.eleves = MyFactory.getEleve();
-    // $scope.eleves = [
-    //     {
-    //         "id" : 1,
-    //         "nom" : "Faye",
-    //         "prenom" : "Mamadou",
-    //         "telephone" : "773827653",
-    //         "classe" : "terminale",
-    //         "age" : 20,
-    //         "sexe" : "M",
-    //         "moyenne" : 13
-    //     },
-    //     {
-    //         "id" : 2,
-    //         "nom" : "Diouf",
-    //         "prenom" : "Ousmane",
-    //         "telephone" : "773827653",
-    //         "classe" : "terminale",
-    //         "age" : 24,
-    //         "sexe" : "M",
-    //         "moyenne" : 13
-    //     }
-    // ];
-
-    $scope.enseignants = MyFactory.getProfesseur();
-
-    $scope.showFilter = false;
-
-    $scope.myFunctionFilter =  function ()
+    let v = MyFactory;
+    v.getEleve().then(function (data) 
     {
-        console.log("ici ma fonction");
-        $scope.showFilter = $scope.showFilter ? false : true;
+        $scope.eleves = data;
+    });
+    v.getProfesseur().then(function (data)
+    {
+        $scope.enseignants = data;
+    });
+    v.getDiscipline().then(function (data)
+    {
+        $scope.disciplines = data;
+    });
+    v.getEmploi().then(function (data) 
+    {
+        $scope.emplois = data;
+    })
+
+
+    this.showFilter = false;
+
+    this.myFunctionFilter =  function ()
+    {
+        this.showFilter = this.showFilter ? false : true;
     }
 });

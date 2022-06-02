@@ -9,22 +9,27 @@ use GraphQL\Type\Definition\ResolveInfo;
 use GraphQL\Type\Definition\Type;
 use Rebing\GraphQL\Support\Query;
 use Rebing\GraphQL\Support\SelectFields;
+use Rebing\GraphQL\Support\Facades\GraphQL;
+use App\Models\Emplois;
 
 class EmploiQuery extends Query
 {
     protected $attributes = [
-        'name' => 'emploi',
+        'name' => 'emplois',
         'description' => 'A query'
     ];
 
     public function type(): Type
     {
-        return Type::listOf(Type::string());
+        return Type::listOf(GraphQl::type('Emploi'));
     }
 
     public function args(): array
     {
         return [
+            'id'                            => ['type' => Type::int()],
+            'titre'                         => ['type' => Type::string()],
+            'description'                   => ['type' => Type::string()],
 
         ];
     }
@@ -32,12 +37,10 @@ class EmploiQuery extends Query
     public function resolve($root, array $args, $context, ResolveInfo $resolveInfo, Closure $getSelectFields)
     {
         /** @var SelectFields $fields */
-        $fields = $getSelectFields();
-        $select = $fields->getSelect();
-        $with = $fields->getRelations();
+        // $fields = $getSelectFields();
+        // $select = $fields->getSelect();
+        // $with = $fields->getRelations();
 
-        return [
-            'The emploi works',
-        ];
+        return Emplois::all();
     }
 }
