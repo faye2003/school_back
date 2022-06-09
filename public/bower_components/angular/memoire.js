@@ -93,6 +93,28 @@ app.factory('MyFactory', function ($http, $q)
                 deferred.reject('Erreur veuillez contacter le support technique!');
             });
             return deferred.promise;
+        },
+        getEvaluation: function (dataget=null) 
+        {
+            let deferred = $q.defer();
+            console.log(dataget);
+            $http({
+                method: 'GET',
+                url: "graphql?query={evaluations{id,designation,description,surveillant,duree,salle}}",
+                headers: {
+                    'contentType' : 'application/graphql',
+                },
+                data: dataget
+            }).then(function successCallback(response) 
+            {
+                factory.data = response['data']['data']['evaluations'];
+                console.log(response['data']);
+                deferred.resolve(factory.data);
+            },function errorCallback(error) {
+                console.log('Erreur serveur', error);
+                deferred.reject('Erreur veuillez contacter le support technique!');
+            });
+            return deferred.promise;
         }
     };
     return factory;
@@ -122,8 +144,8 @@ app.config(function ($routeProvider) {
         templateUrl : 'page/emplois',
     });
 
-    $routeProvider.when ('/niveau', {
-        templateUrl : 'page/niveaux',
+    $routeProvider.when ('/niveaus', {
+        templateUrl : 'page/niveaus',
     });
 
     $routeProvider.when ('/notes', {
@@ -161,6 +183,12 @@ app.controller('MyController', function ($scope, MyFactory) {
     v.getEmploi().then(function (data) 
     {
         $scope.emplois = data;
+    });
+    v.getEvaluation().then(function (data) 
+    {
+        console.log(data);
+        $scope.evaluations = data;
+        
     })
 
 

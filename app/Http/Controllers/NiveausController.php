@@ -14,14 +14,14 @@ class NiveausController extends Controller
         try {
             return DB::transaction(function () use ($request)
             {
+                //dd($request->all());
                 $errors = null;
                 $item = new Niveaus();
                 $item->designation = $request->designation;
                 $item->description = $request->description;
-                //dd($item);
                 $item->save();
 
-                return redirect('/#!/niveau')->with('status', 'Cycle saved successfully');
+                return redirect('/#!/niveaus')->with('status', 'Cycle saved successfully');
             });
         } catch (\Throwable $th) {
             //throw $th;

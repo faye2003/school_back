@@ -273,7 +273,7 @@
     <div class="alert alert-success">
         {{ session('status') }}
     </div>
-  @endif
+    @endif
     <div class="container">
       <form method="post" action="{{url('niveau')}}">
         @csrf

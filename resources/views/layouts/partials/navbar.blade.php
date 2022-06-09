@@ -40,7 +40,7 @@
                 <a href="#!/emplois"><span class="fa fa-address-book"></span><span>Emplois</span></a>
             </li>
             <li>
-                <a href="#!/niveau"><span class="fa fa-clipboard"></span><span>Cycles</span></a>
+                <a href="#!/niveaus"><span class="fa fa-clipboard"></span><span>Cycles</span></a>
             </li>
             <li>
                 <a href="#!/notes"><span class="fa fa-money"></span><span>Notes</span></a>
