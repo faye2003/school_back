@@ -6,17 +6,17 @@
 <small>Classes</small>
 </div>
 <div>
-<span class="fa fa-shopping-cart"></span>
+<span class="fa fa-university"></span>
 </div>
 </div>
 
 <div class="card-single">
 <div>
-<h2>+30</h2>
+<h2>+2</h2>
 <small>Professeurs</small>
 </div>
 <div>
-<span class="fa fa-newspaper-o"></span>
+<span class="fa fa-briefcase"></span>
 </div>
 </div>
 <div class="card-single">
@@ -30,7 +30,7 @@
 </div>
 <div class="card-single">
 <div>
-<h2>20k</h2>
+<h2>20</h2>
 <small>Eleves</small>
 </div>
 <div>
@@ -51,12 +51,12 @@
 <table width="100%">
   <thead>
     <tr>
-      <td>First</td>
-      <td>Last</td>
-      <td>Handle</td>
+      <td>Prenom</td>
+      <td>Nom</td>
+      <td>Status</td>
     </tr>
   </thead>
-  <tbody>
+  <!-- <tbody>
     <tr>
       <td>Mark</td>
       <td>Otto</td>
@@ -82,7 +82,7 @@
       <td>@twitter</td>
       <td><span class="status-produit color-five"></span>@twitter</td>
     </tr>
-  </tbody>
+  </tbody> -->
 </table>
 </div>
 </div>
@@ -103,7 +103,7 @@
 <img src="images/pp.jpg" width="30" height="30">
 <div>
 <h4>Omar</h4>
-<small>Embulant</small>
+<small>Excellent</small>
 </div>
 </div>
 
@@ -118,8 +118,8 @@
 <div class="infos">
 <img src="images/pp.jpg" width="30" height="30">
 <div>
-<h4>Omar</h4>
-<small>Embulant</small>
+<h4>Fatou</h4>
+<small>Excellente</small>
 </div>
 </div>
 
@@ -134,8 +134,8 @@
 <div class="infos">
 <img src="images/pp.jpg" width="30" height="30">
 <div>
-<h4>Omar</h4>
-<small>Embulant</small>
+<h4>Ousmane</h4>
+<small>Excellent</small>
 </div>
 </div>
 
@@ -151,8 +151,8 @@
 <div class="infos">
 <img src="images/pp.jpg" width="30" height="30">
 <div>
-<h4>Omar</h4>
-<small>Embulant</small>
+<h4>Amy</h4>
+<small>Excellente</small>
 </div>
 </div>
 

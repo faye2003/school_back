@@ -115,6 +115,28 @@ app.factory('MyFactory', function ($http, $q)
                 deferred.reject('Erreur veuillez contacter le support technique!');
             });
             return deferred.promise;
+        },
+        getDashboard: function (dataget=null) 
+        {
+            let deferred = $q.defer();
+            console.log(dataget);
+            $http({
+                method: 'GET',
+                url: "graphql?query={dashboards{nombre_eleves,nombre_profs,nombre_disciplines,nombre_cours,meilleur_eleves,taux_reussite,surveillants}}",
+                headers: {
+                    'contentType' : 'application/graphql',
+                },
+                data: dataget
+            }).then(function successCallback(response) 
+            {
+                factory.data = response['data']['data']['dashboards'];
+                console.log(response['data']);
+                deferred.resolve(factory.data);
+            },function errorCallback(error) {
+                console.log('Erreur serveur', error);
+                deferred.reject('Erreur veuillez contacter le support technique!');
+            });
+            return deferred.promise;
         }
     };
     return factory;
@@ -192,10 +214,10 @@ app.controller('MyController', function ($scope, MyFactory) {
     })
 
 
-    this.showFilter = false;
+    $scope.showFilter = false;
 
-    this.myFunctionFilter =  function ()
+    $scope.myFunctionFilter =  function ()
     {
-        this.showFilter = this.showFilter ? false : true;
+        $scope.showFilter = $scope.showFilter ? false : true;
     }
 });

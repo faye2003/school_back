@@ -16,16 +16,16 @@
     @csrf
     <div class="row">
         <div class="col-sm-3">
-          <input type="text" class="form-control" id="email" placeholder="Nom" name="nom">
+          <input ng-model="query" type="text" class="form-control" id="email" placeholder="Nom" name="nom">
         </div>
         <div class="col-sm-3">
-          <input type="text" class="form-control" placeholder="Prenom" name="prenom">
+          <input ng-model="query" type="text" class="form-control" placeholder="Prenom" name="prenom">
         </div>
         <div class="col-sm-3">
-          <input type="text" class="form-control" id="telephone" placeholder="Telephone" name="telephone">
+          <input ng-model="query" type="text" class="form-control" id="telephone" placeholder="Telephone" name="telephone">
         </div>
         <div class="col-sm-3">
-          <input type="text" class="form-control" placeholder="Classe" name="classe">
+          <input ng-model="query" type="text" class="form-control" placeholder="Classe" name="classe">
         </div>
       </div><br>
       <div class="row">
@@ -69,7 +69,7 @@
     <th>Moyenne</th>
     <th>Actions</th>
   </tr>
-  <tr ng-repeat="item in eleves">
+  <tr ng-repeat="item in eleves | filter: query | orderBy: ''">
     <th>@{{item.id}}</th>
     <td>@{{item.nom}}</td>
     <td>@{{item.prenom}}</td>
