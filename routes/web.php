@@ -31,3 +31,7 @@ Route::post('cours', [App\Http\Controllers\CoursController::class, 'save']);
 Route::post('discipline', [App\Http\Controllers\DisciplinesController::class, 'save']);
 Route::post('emploi', [App\Http\Controllers\EmploisController::class, 'save']);
 Route::post('niveau', [App\Http\Controllers\NiveausController::class, 'save']);
+Route::delete('/profs/{id}', [App\Http\Controllers\EnseignantsController::class, 'delete']);
+Route::delete('/eleves/{id}', [App\Http\Controllers\ElevesController::class, 'delete']);
+Route::delete('evaluations/{id}', [App\Http\Controllers\EvaluationsController::class, 'delete']);
+Route::delete('discipline/{id}', [App\Http\Controllers\DisciplinesController::class, 'delete']);

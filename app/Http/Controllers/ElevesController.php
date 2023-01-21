@@ -34,4 +34,17 @@ class ElevesController extends Controller
             //throw $th;
         }
     }
+
+    public function delete ($id) 
+    {
+        try {
+            return DB::transaction(function () use ($id)
+            {
+                Eleves::destroy($id);
+                return redirect('/#!/eleves')->with('status', 'Les informations de l\'eleve sont bien enregistreeeeeee');
+            });
+        } catch (\Throwable $th) {
+            //throw $th;
+        }
+    }
 }

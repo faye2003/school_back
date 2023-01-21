@@ -12,7 +12,7 @@
 
 <div class="card-single">
 <div>
-<h2>+2</h2>
+<h2>+4</h2>
 <small>Professeurs</small>
 </div>
 <div>
@@ -21,7 +21,7 @@
 </div>
 <div class="card-single">
 <div>
-<h2>58</h2>
+<h2>2</h2>
 <small>Disciplines</small>
 </div>
 <div>
@@ -30,7 +30,7 @@
 </div>
 <div class="card-single">
 <div>
-<h2>20</h2>
+<h2>4</h2>
 <small>Eleves</small>
 </div>
 <div>

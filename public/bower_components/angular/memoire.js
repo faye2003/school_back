@@ -187,7 +187,7 @@ app.config(function ($routeProvider) {
     });
 });
 
-app.controller('MyController', function ($scope, MyFactory) {
+app.controller('MyController', function ($scope, MyFactory, $http) {
 
     let v = MyFactory;
     v.getEleve().then(function (data) 
@@ -219,5 +219,36 @@ app.controller('MyController', function ($scope, MyFactory) {
     $scope.myFunctionFilter =  function ()
     {
         $scope.showFilter = $scope.showFilter ? false : true;
+    }
+
+    // https://stackoverflow.com/questions/25212135/angularjs-deleting-item-of-array-from-laravel-database
+    $scope.removeEleve = function (item)
+    {
+        // Save index into variable
+        var index = $scope.eleves.indexOf(item);
+        if (index != -1) {
+            // Remove eleve-item from array
+            $scope.eleves.splice(index, 1);
+        }
+        // Now remove todo-items from laravel
+        $http.delete('eleves/'+item.id);
+    }
+
+    $scope.removeProf = function (item)
+    {
+        var index = $scope.enseignants.indexOf(item);
+        if (index != -1) {
+            $scope.enseignants.splice(index, 1);
+        }
+        $http.delete('profs/'+item.id);
+    }
+
+    $scope.removeDiscipline = function (item)
+    {
+        var index = $scope.disciplines.indexOf(item);
+        if (index != -1) {
+            $scope.disciplines.splice(index, 1);
+        }
+        $http.delete('discipline/'+item.id);
     }
 });

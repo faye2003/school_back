@@ -31,4 +31,16 @@ class EnseignantsController extends Controller
             //throw $th;
         }
     }
+
+    public function delete($id)
+    {
+        try {
+            return DB::transaction(function () use ($id)
+            {
+                Enseignants::destroy($id);
+            });
+        } catch (\Throwable $th) {
+            //throw $th;
+        }
+    }
 }
